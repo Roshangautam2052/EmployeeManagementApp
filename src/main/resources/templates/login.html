@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <form th:action="@{/processLogin}" method="post" th:object="${loginCredentials}">
+        <h1>Welcome to Admin Dashboard</h1>
+        <div class ="input-box">
+            <input type="text" placeholder ="Username" required th:field="*{userName}">
+        </div>
+        <div class ="input-box">
+            <input type="password" placeholder ="Password" required th:field="*{password}">
+        </div>
+        <div class ="remember-forgot">
+            <label><input type ="checkbox"> Remember me</label>
+            <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class ="btn">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
